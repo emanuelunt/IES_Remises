@@ -1,0 +1,51 @@
+
+
+using FluentValidation;
+using Remis.API.AutoMapper;
+using Remis.API.DTOs.Persona;
+using Remis.API.Validadores;
+using Remis.INFRASTRUCTURE.ExtensionesServicios;
+
+namespace Remis.API
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+           
+            // Agrega el servicio de validación de modelos
+            builder.Services.AddScoped<IValidator<PersonaCrearDto>, PersonaCrearValidator>();
+            builder.Services.AddScoped<IValidator<PersonaActualizarDto>, PersonaActualizarValidador>();
+
+            // Agrega AutoMapper inyección de dependencias
+            builder.Services.AddAutoMapper(typeof(MappeoObjeto));
+
+
+            builder.Services.AddControllers();
+            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            builder.Services.AddOpenApi();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.MapOpenApi();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}

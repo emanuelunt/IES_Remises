@@ -1,0 +1,98 @@
+# ==========================================
+# Archivos de compilación y resultados
+# ==========================================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Ll]og/
+[Ll]ogs/
+[Ee]rrorlog/
+artifacts/
+publish/
+PublishScripts/
+*.publish.xml
+*.pubxml
+*.pubxml.user
+
+# ==========================================
+# Archivos específicos de usuario (IDE/Visual Studio)
+# ==========================================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+
+# ==========================================
+# Archivos de otros IDEs (Rider, VS Code)
+# ==========================================
+.idea/
+*.sln.iml
+.vscode/
+
+# ==========================================
+# Pruebas y cobertura (Remis.TESTS)
+# ==========================================
+[Tt]est[Rr]esults/
+*.trx
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage/
+
+# ==========================================
+# Paquetes de NuGet
+# ==========================================
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+
+# ==========================================
+# Archivos de configuración sensibles (¡IMPORTANTE!)
+# ==========================================
+# Ignora los appsettings específicos del entorno para no subir secretos
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+!appsettings.json
+secrets.json
+
+# ==========================================
+# Archivos de registro (Logs) y bases de datos locales
+# ==========================================
+*.log
+*.db
+*.sqlite
+*.mdf
+*.bak
+*.ldf
+
+# ==========================================
+# Archivos de entorno y secretos
+# ==========================================
+.env
+.env.*
+*.pfx
+*.pem
+*.crt
+*.key
+
+# ==========================================
+# Archivos del sistema operativo
+# ==========================================
+.DS_Store
+Desktop.ini
+Thumbs.db
+*~
