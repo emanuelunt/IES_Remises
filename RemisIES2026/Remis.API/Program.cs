@@ -23,7 +23,7 @@ namespace Remis.API
             builder.Services.AddScoped<IValidator<PersonaActualizarDto>, PersonaActualizarValidador>();
 
             // Agrega AutoMapper inyección de dependencias
-            builder.Services.AddAutoMapper(typeof(MappeoObjeto));
+            builder.Services.AddAutoMapper(cfg => { }, typeof(MappeoObjeto));
 
 
             builder.Services.AddControllers();

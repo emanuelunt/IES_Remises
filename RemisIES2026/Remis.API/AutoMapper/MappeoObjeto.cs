@@ -10,7 +10,8 @@ namespace Remis.API.AutoMapper
         {
            CreateMap<Persona, PersonaDto>();
             CreateMap<PersonaCrearDto, Persona>();
-           CreateMap<PersonaActualizarDto, Persona>();           
+           CreateMap<PersonaActualizarDto, Persona>(); 
+            
         }
     }
 }
