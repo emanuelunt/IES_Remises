@@ -391,5 +391,5 @@ namespace Remis.INFRASTRUCTURE.Repositorios
             }
         }
    
-    }
+    }// fin de la clase RepositorioPersona
 }

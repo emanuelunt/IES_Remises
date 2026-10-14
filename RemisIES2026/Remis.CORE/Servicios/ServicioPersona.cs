@@ -1,8 +1,5 @@
 ﻿using Remis.CORE.Entidades;
 using Remis.CORE.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Remis.CORE.Servicios
 {

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace Remis.CORE.Entidades
 {
@@ -14,7 +12,6 @@ namespace Remis.CORE.Entidades
         [Column("id_usuario")]
         public int IdUsuario { get; set; }
 
-        //Propiedades de navegación
         [ForeignKey("IdRol")]
         public Rol? Rol { get; set; }
 

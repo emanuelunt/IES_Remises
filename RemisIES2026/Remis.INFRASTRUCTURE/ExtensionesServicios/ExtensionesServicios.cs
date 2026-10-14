@@ -24,7 +24,10 @@ namespace Remis.INFRASTRUCTURE.ExtensionesServicios
 
             services.AddScoped<IRepositorioPersona, RepositorioPersona>();
             services.AddScoped<ServicioPersona>();
-                       
+            services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
+            services.AddScoped<ServicioUsuario>();
+            services.AddScoped<IRepositorioChofer, RepositorioChofer>();
+            //services.AddScoped<ServicioChofer>(); programar la clase
 
             return services;
         }

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+
 
 namespace Remis.CORE.Entidades
 {
@@ -23,9 +21,8 @@ namespace Remis.CORE.Entidades
         public string? Descripcion { get; set; }
 
         [Column("nivel_acceso")]
-        public byte? NivelAcceso { get; set; }  // TINYINT → byte
+        public byte? NivelAcceso { get; set; }
 
-        //Propiedad de navegación (relación muchos a muchos)
         public ICollection<UsuarioRol> UsuariosRoles { get; set; } = new List<UsuarioRol>();
     }
 }

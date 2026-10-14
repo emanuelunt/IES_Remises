@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+
 
 namespace Remis.CORE.Entidades
 {
@@ -19,7 +17,7 @@ namespace Remis.CORE.Entidades
 
         [Column("usuario")]
         [MaxLength(100)]
-        public string? UsuarioNombre { get; set; }  // ← "usuario" es palabra reservada en algunos ORM
+        public string? UsuarioNombre { get; set; }
 
         [Column("password_hash")]
         [MaxLength(255)]
@@ -37,10 +35,9 @@ namespace Remis.CORE.Entidades
         [Column("activo")]
         public bool? Activo { get; set; }
 
-        //Propiedades de navegación
+        // Navegación
         [ForeignKey("IdPersona")]
         public Persona? Persona { get; set; }
-
         public ICollection<UsuarioRol> UsuariosRoles { get; set; } = new List<UsuarioRol>();
     }
 }
