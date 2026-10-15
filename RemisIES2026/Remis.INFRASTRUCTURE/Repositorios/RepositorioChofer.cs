@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Remis.CORE.Entidades;
 using Remis.CORE.Interfaces;
+using Remis.INFRASTRUCTURE.Contexto;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,10 +12,10 @@ namespace Remis.INFRASTRUCTURE.Repositorios
     public class RepositorioChofer : IRepositorioChofer
     {
         private readonly IMyConexion conexion_;
-
-        public RepositorioChofer(IMyConexion _conexion)
+        
+        public RepositorioChofer(IMyConexion cnn)
         {
-            conexion_ = _conexion;
+            conexion_ = cnn;
         }
 
 
@@ -73,9 +74,9 @@ namespace Remis.INFRASTRUCTURE.Repositorios
 
         public async Task<IEnumerable<Chofer>> ObtenerTodosAsync()
         {
-            using var connection = await conexion_.obtenerConexionAsync();
+            using var connectionDapper = await conexion_.obtenerConexionAsync();
 
-            var choferes = await connection.QueryAsync<Chofer>("sp_choferes_obtener_todos", commandType: CommandType.StoredProcedure);
+            var choferes = await connectionDapper.QueryAsync<Chofer>("sp_choferes_obtener_todos", commandType: CommandType.StoredProcedure);
 
             return (choferes);            
         }
